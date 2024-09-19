@@ -3,7 +3,11 @@
   "description": "Simplifies the process of creating targetables for PageBuilder components",
   "version": "1.0.0",
   "author": "Marcin Jędrzejewski <m.jedrzejewski@collab.pl>",
-  "repository": "https://github.com/collabpl/pwa-studio-pagebuilder-component-targetables",
+  "homepage": "https://github.com/collabpl/pwa-studio-pagebuilder-component-targetables",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collabpl/pwa-studio-pagebuilder-component-targetables.git"
+  },
   "bugs": {
     "url": "https://github.com/collabpl/pwa-studio-pagebuilder-component-targetables/issues"
   },
