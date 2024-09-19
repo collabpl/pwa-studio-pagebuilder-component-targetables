@@ -1,5 +1,5 @@
 {
-  "name": "@collab/pwa-studio-pagebuilder-component-targetables",
+  "name": "@collabpl/pwa-studio-pagebuilder-component-targetables",
   "description": "Simplifies the process of creating targetables for PageBuilder components",
   "version": "1.0.0",
   "author": "Marcin Jędrzejewski <m.jedrzejewski@collab.pl>",
