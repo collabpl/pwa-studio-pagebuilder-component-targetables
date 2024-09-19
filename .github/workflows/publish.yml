@@ -17,7 +17,7 @@ jobs:
       - name: Use Node LTS ✨
         uses: actions/setup-node@v3
         with:
-          node-version: lts/18
+          node-version: lts/*
           registry-url: https://registry.npmjs.org
           cache: yarn
 
@@ -30,3 +30,27 @@ jobs:
       - uses: simenandre/publish-with-yarn@v1
         with:
           npm-auth-token: ${{ secrets.NPM_TOKEN }}
+
+name: NPM Publish
+on:
+  workflow_dispatch:
+    push:
+      branches:
+        - main
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@collabpl'
+      - run: yarn
+      - run: yarn build
+      - run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
