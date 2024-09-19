@@ -1,23 +1,32 @@
-name: NPM Publish
+name: Release to NPM
+
 on:
   workflow_dispatch:
     push:
       branches:
         - main
   release:
-    types: [published]
+    types: [released]
+
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+
+      - name: Use Node LTS ✨
+        uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@collabpl'
-      - run: yarn
-      - run: yarn build
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          node-version: lts/18
+          registry-url: https://registry.npmjs.org
+          cache: yarn
+
+      - name: Install dependencies 📦️
+        run: yarn install --immutable
+
+      - name: Build 🔨
+        run: yarn build
+
+      - uses: simenandre/publish-with-yarn@v1
+        with:
+          npm-auth-token: ${{ secrets.NPM_TOKEN }}
