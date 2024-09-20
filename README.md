@@ -6,7 +6,7 @@ Allows to use `.targetables.js` for `@magento/pagebuilder` components.
 
 Yours `local-intercept.js`
 ```javascript
-const { ExtendPagebuilderComponentIntercept } = require('@collab/pwa-studio-pagebuilder-component-targetables');
+const { ExtendPagebuilderComponentIntercept } = require('@collabpl/pwa-studio-pagebuilder-component-targetables');
 const { Targetables } = require('@magento/pwa-buildpack');
 
 module.exports = targets => {

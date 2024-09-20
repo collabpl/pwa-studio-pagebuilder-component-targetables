@@ -1,7 +1,7 @@
 {
   "name": "@collabpl/pwa-studio-pagebuilder-component-targetables",
   "description": "Simplifies the process of creating targetables for PageBuilder components",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Marcin Jędrzejewski <m.jedrzejewski@collab.pl>",
   "homepage": "https://github.com/collabpl/pwa-studio-pagebuilder-component-targetables",
   "repository": {
@@ -21,7 +21,7 @@
     "lint-and-fix": "eslint  src/** --fix"
   },
   "dependencies": {
-    "globby": "^14.0.2"
+    "globby": "^11.0.0"
   },
   "engines": {
     "node": ">=18"

@@ -1,7 +1,7 @@
 import path from "path";
-import { globby } from "globby";
+import globby = require("globby");
 import {stat as fsStat} from "fs/promises";
-import {requireTargetFile} from "./requireTargetFile";
+import {requireTargetFile} from "./requireTargetFile.js";
 
 enum LogLevel {
     None = -1,
